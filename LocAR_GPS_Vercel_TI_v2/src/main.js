@@ -8,6 +8,18 @@ const accuracyEl = document.getElementById("accuracy");
 const distanceEl = document.getElementById("distance");
 const canvas = document.getElementById("ar-canvas");
 
+// Inicializar video de cámara como fondo
+const videoEl = document.getElementById("camera");
+
+navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } })
+  .then(stream => {
+    videoEl.srcObject = stream;
+  })
+  .catch(err => {
+    console.error("Error al iniciar cámara:", err);
+    setStatus("No se pudo acceder a la cámara");
+  });
+
 const TARGET = {
   lat: -2.291122,
   lon: -78.1141843,
