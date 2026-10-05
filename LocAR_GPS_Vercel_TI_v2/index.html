@@ -7,7 +7,14 @@
   <title>LocAR GPS - Laboratorio de Redes</title>
   <style>
     * { box-sizing: border-box; }
-    html, body { margin:0; width:100%; height:100%; overflow:hidden; font-family:Arial,sans-serif; background:#000; }
+  html, body { 
+  margin:0; 
+  width:100%; 
+  height:100%; 
+  overflow:hidden; 
+  font-family:Arial,sans-serif; 
+  background:transparent;
+}
     #ar-canvas { position:fixed; inset:0; width:100%; height:100%; display:block; }
     #panel {
       position:fixed; z-index:10; top:12px; left:12px; right:12px;
@@ -27,7 +34,10 @@
   </style>
 </head>
 <body>
-  <canvas id="ar-canvas"></canvas>
+  <video id="camera" autoplay playsinline 
+  style="position:fixed; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1;">
+</video>
+<canvas id="ar-canvas"></canvas>
 
   <div id="panel">
     <b>AR por ubicación — LocAR.js</b><br>
